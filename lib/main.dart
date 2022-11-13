@@ -27,16 +27,16 @@ class MyApp extends StatelessWidget {
           // errorColor: Colors.red,
           fontFamily: 'Quicksand',
           textTheme: ThemeData.light().textTheme.copyWith(
-            subtitle1: TextStyle(
+            subtitle1: const TextStyle(
               fontFamily: 'OpenSans',
               fontWeight: FontWeight.bold,
               fontSize: 18,
             ),
-            button: TextStyle(color: Colors.white),
+            button: const TextStyle(color: Colors.white),
           ),
           appBarTheme: AppBarTheme(
             textTheme: ThemeData.light().textTheme.copyWith(
-              subtitle1: TextStyle(
+              subtitle1: const TextStyle(
                 fontFamily: 'OpenSans',
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return _userTransactions.where((tx) {
       return tx.date.isAfter(
         DateTime.now().subtract(
-          Duration(days: 7),
+          const Duration(days: 7),
         ),
       );
     }).toList();
@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final mediaQuery=MediaQuery.of(context);
     final isLandscape = mediaQuery.orientation == Orientation.landscape;
     final appBar = AppBar(
-      title: Text(
+      title: const Text(
         'Personal Expenses',
       ),
       actions: <Widget>[
@@ -148,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text('Show Chart'),
+                  const Text('Show Chart'),
                   Switch(
                     value: _showChart,
                     onChanged: (val) {
@@ -182,7 +182,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () => _startAddNewTransaction(context),
       ),
     );
